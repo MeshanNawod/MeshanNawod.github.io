@@ -118,6 +118,12 @@ h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.025em;margin:6px 0 28px;l
 .filter button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.9rem}
 .filter button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 
+/* design gallery */
+.dgallery{columns:3 240px;column-gap:12px}
+.dgallery button{display:block;width:100%;margin:0 0 12px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:zoom-in;background:var(--card);break-inside:avoid}
+.dgallery img{width:100%;height:auto;transition:transform .4s}
+.dgallery button:hover img{transform:scale(1.04)}
+
 /* community */
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
 .cgrid .panel p{margin:0;color:var(--muted);font-size:.95rem}
@@ -151,8 +157,9 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
       <a href="#experience">Experience</a>
       <a href="#featured">Featured</a>
       <a href="#projects">Projects</a>
+      <a href="#design">Design</a>
+      <a href="#phybits">PhyBits</a>
       <a href="#web">Websites</a>
-      <a href="#community">Community</a>
       <a class="keep" href="#contact">Contact</a>
       <button class="theme" id="themeBtn" aria-label="Toggle light or dark theme">◐</button>
     </div>
@@ -166,7 +173,7 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
       <span class="eyebrow"><i></i>Faculty of Science · University of Peradeniya</span>
       <h1>Hi, I'm <span class="grad">Meshan&nbsp;Nawod</span></h1>
       <p class="typed" aria-live="polite"><b id="typed"></b><span class="caret"></span></p>
-      <p class="lead">I'm a physics undergraduate who likes to build things. I make IoT attendance systems, Slurm clusters and websites for faculty groups, and I explain research to the public. I'm a <strong>Web Developer (Trainee)</strong> at the Faculty of Science Web Committee and <strong>Junior Treasurer</strong> of Vibhava 2026.</p>
+      <p class="lead">I'm a physics undergraduate who likes to build and design things. I make IoT attendance systems, Slurm clusters, websites and graphics for faculty groups, and I explain research to the public. I'm a <strong>Web Developer (Trainee)</strong> at the Faculty of Science Web Committee and <strong>Junior Treasurer</strong> of Vibhava 2026.</p>
       <div class="btns">
         <a class="btn primary" href="#projects">See my work →</a>
         <a class="btn" href="https://github.com/MeshanNawod" target="_blank" rel="noopener">GitHub</a>
@@ -183,7 +190,7 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
       <div class="stat"><b id="repoCount">20+</b><span>public repositories</span></div>
       <div class="stat"><b>4</b><span>websites built for university groups</span></div>
       <div class="stat"><b>7</b><span>attendance methods in Sentinel Swarm</span></div>
-      <div class="stat"><b>2026</b><span>Pera Nexus exhibitor</span></div>
+      <div class="stat"><b>80+</b><span>PhyBits summaries edited</span></div>
     </div>
   </div>
 </header>
@@ -191,16 +198,16 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
 <main>
 <section id="about" class="wrap reveal">
   <div class="kicker">01 · About</div>
-  <h2>Physics student. Builder. Communicator.</h2>
+  <h2>Physics student. Builder. Designer. Communicator.</h2>
   <div class="about">
     <div>
       <p>I'm <strong>M.D.M.N. Appuhami</strong>, known as <strong>Meshan Nawod</strong>. I study Physics at the Faculty of Science, University of Peradeniya, Sri Lanka. I'm interested in physics, mathematics, computational science and AI, and I learn best by building working projects.</p>
-      <p>My work ranges from ESP32 and Raspberry Pi hardware and PHP/MySQL dashboards to Bash scripts that set up an HPC cluster, Python computer-vision tools, and websites for university departments and research centres. Outside the lab I help run student organisations and community service projects.</p>
+      <p>My work ranges from ESP32 and Raspberry Pi hardware and PHP/MySQL dashboards to Bash scripts that set up an HPC cluster, Python computer-vision tools, and websites for university departments and research centres. I also design: posters, social media graphics, photo manipulations and 3D renders in Photoshop, Illustrator and Blender. Outside the lab I help run student organisations and community service projects.</p>
     </div>
     <div class="panel">
       <h3>Tools I use</h3>
       <ul class="chips">
-        <li>Python</li><li>PHP · MySQL</li><li>JavaScript</li><li>HTML · CSS</li><li>C/C++ (ESP32)</li><li>Bash · Linux</li><li>Slurm · HPC</li><li>OpenCV · NumPy</li><li>Raspberry Pi</li><li>Google Sites</li><li>PySide6 · Qt</li><li>Graphic design</li>
+        <li>Python</li><li>PHP · MySQL</li><li>JavaScript</li><li>HTML · CSS</li><li>C/C++ (ESP32)</li><li>Bash · Linux</li><li>Slurm · HPC</li><li>OpenCV · NumPy</li><li>Raspberry Pi</li><li>Google Sites</li><li>PySide6 · Qt</li><li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Blender</li>
       </ul>
     </div>
   </div>
@@ -254,9 +261,9 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
     <article class="role">
       <div class="when">Ongoing</div>
       <div>
-        <h3>Content Writer · PhyBits</h3>
+        <h3>Editor · PhyBits</h3>
         <div class="org"><a href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">The Physical Society, University of Peradeniya</a></div>
-        <p>I write short, accessible summaries of new physics research from journals such as PRL, Nature and Science, with links to the original papers.</p>
+        <p>I've edited 80+ short summaries of new physics research from PRL, Nature, Science and MIT News, checking that each is accurate and clear before it's published.</p>
       </div>
     </article>
   </div>
@@ -302,8 +309,40 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
   <div class="grid" id="repos"><p class="mono" style="color:var(--muted)">Loading repositories…</p></div>
 </section>
 
+<section id="design" class="wrap reveal">
+  <div class="kicker">05 · Design</div>
+  <h2>Graphic design &amp; 3D</h2>
+  <p class="sub">I design posters, social media graphics, logos, photo manipulations and 3D scenes for the Faculty of Science, PAA.UP, student societies and my own projects.</p>
+  <div class="cgrid" style="margin-bottom:22px">
+    <div class="panel"><h3>Adobe Photoshop</h3><p>Photo manipulation, compositing, event posters and social media posts.</p></div>
+    <div class="panel"><h3>Adobe Illustrator</h3><p>Logos, vector illustrations, branding and print-ready layouts.</p></div>
+    <div class="panel"><h3>Blender</h3><p>3D modelling, lighting and rendering for scenes and product visuals.</p></div>
+    <div class="panel"><h3>Where I've used it</h3><p>The Faculty of Science Web Committee (Facebook page and website graphics), PAA.UP and the Physics Department, and Vibhava.</p></div>
+  </div>
+  <div class="dgallery" id="dgallery"></div>
+  <div class="btns" style="margin-top:20px">
+    <a class="btn primary" href="https://www.instagram.com/meshan_nawod/" target="_blank" rel="noopener">See more designs on Instagram ↗</a>
+    <a class="btn" href="https://www.facebook.com/meshan.me" target="_blank" rel="noopener">Facebook ↗</a>
+  </div>
+</section>
+
+<section id="phybits" class="wrap reveal">
+  <div class="kicker">06 · PhyBits</div>
+  <h2>Editing physics news for students</h2>
+  <p class="sub"><a href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">PhyBits</a> is The Physical Society's feed of bite-sized physics research news. I've edited <strong>80+ summaries</strong> since 2025. Here are a few:</p>
+  <div class="grid">
+    <a class="card" href="https://www.nobelprize.org/uploads/2025/10/advanced-physicsprize2025.pdf" target="_blank" rel="noopener"><h3>The 2025 Nobel Prize in Physics <small>↗</small></h3><p>Macroscopic quantum tunnelling and energy quantisation in an electric circuit.</p><div class="meta"><span>Nobel Spotlight</span></div></a>
+    <a class="card" href="https://www.brown.edu/news/2025-01-08/new-quantum-particles" target="_blank" rel="noopener"><h3>Fractional excitons in graphene <small>↗</small></h3><p>A new class of quantum particles found in bilayer graphene.</p><div class="meta"><span>Condensed matter</span></div></a>
+    <a class="card" href="https://news.mit.edu/2025/physicists-devise-idea-lasers-shoot-beams-neutrinos-0908" target="_blank" rel="noopener"><h3>A laser for neutrinos <small>↗</small></h3><p>MIT physicists propose a way to make a coherent beam of neutrinos.</p><div class="meta"><span>Particle physics</span></div></a>
+    <a class="card" href="https://www.science.org/doi/10.1126/science.adv2560" target="_blank" rel="noopener"><h3>Photonic quantum advantage <small>↗</small></h3><p>Entangled photons beat classical limits on a learning task.</p><div class="meta"><span>Quantum</span></div></a>
+    <a class="card" href="https://phys.org/news/2026-05-black-holes-singularities-hawking-combine.html" target="_blank" rel="noopener"><h3>Black holes without singularities <small>↗</small></h3><p>How charged black holes might avoid a central singularity.</p><div class="meta"><span>Astrophysics</span></div></a>
+    <a class="card" href="https://www.nature.com/articles/s41563-025-02344-1" target="_blank" rel="noopener"><h3>A liquid-crystal time crystal <small>↗</small></h3><p>A time crystal you can see under a microscope.</p><div class="meta"><span>Materials</span></div></a>
+  </div>
+  <div class="btns" style="margin-top:20px"><a class="btn" href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">Read all PhyBits ↗</a></div>
+</section>
+
 <section id="web" class="wrap reveal">
-  <div class="kicker">05 · Websites</div>
+  <div class="kicker">07 · Websites</div>
   <h2>Sites I've built for the university</h2>
   <div class="grid">
     <a class="card" href="https://sites.google.com/view/paaup/" target="_blank" rel="noopener">
@@ -323,14 +362,14 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
     </a>
     <a class="card" href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">
       <h3>PhyBits <small>↗</small></h3>
-      <p>Bite-sized physics news for The Physical Society, University of Peradeniya, to which I contribute as a content writer.</p>
+      <p>Bite-sized physics news for The Physical Society, University of Peradeniya. I'm one of its editors.</p>
       <div class="meta"><span>Writing</span><span>Physics news</span></div>
     </a>
   </div>
 </section>
 
 <section id="community" class="wrap reveal">
-  <div class="kicker">06 · Community</div>
+  <div class="kicker">08 · Community</div>
   <h2>Beyond the code</h2>
   <div class="cgrid">
     <div class="panel"><h3>Vibhava</h3><p class="org">Junior Treasurer 2026 · Batch Coordinator 2025</p><p>I help organise one of the university's student-led programmes, from coordinating the Science 22 batch to managing finances.</p></div>
@@ -343,7 +382,7 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
 
 <section id="contact" class="wrap reveal">
   <div class="contact">
-    <div class="kicker">07 · Contact</div>
+    <div class="kicker">09 · Contact</div>
     <h2 style="margin-bottom:12px">Let's build something.</h2>
     <p style="color:var(--muted);margin:0 0 18px">Open to collaborations, internships, research projects and web work.</p>
     <a class="mail" href="mailto:meshannawodme@gmail.com">meshannawodme@gmail.com</a>
@@ -371,7 +410,7 @@ btn.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':match
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 // typed roles
-const roles=['Physics undergraduate','Web Developer (Trainee)','IoT & automation builder','Science communicator','Junior Treasurer · Vibhava 2026'];
+const roles=['Physics undergraduate','Web Developer (Trainee)','Graphic & 3D designer','IoT & automation builder','Science communicator','Junior Treasurer · Vibhava 2026'];
 const el=document.getElementById('typed');let ri=0,ci=0,del=false;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function tick(){const w=roles[ri];if(reduce){el.textContent=roles.join(' · ');return}
@@ -397,7 +436,14 @@ document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
 
 // lightbox
 const lb=document.getElementById('lightbox');
-document.querySelectorAll('#gallery button').forEach(b=>b.onclick=()=>{const i=b.querySelector('img');lb.querySelector('img').src=i.src;lb.querySelector('img').alt=i.alt;lb.querySelector('p').textContent=b.dataset.cap;lb.showModal()});
+const openLb=b=>{const i=b.querySelector('img');lb.querySelector('img').src=i.src;lb.querySelector('img').alt=i.alt;lb.querySelector('p').textContent=b.dataset.cap||'';lb.showModal()};
+document.querySelectorAll('#gallery button').forEach(b=>b.onclick=()=>openLb(b));
+
+// design gallery: shows assets/img/design/design-1.jpg ... design-24.jpg, skipping missing files
+(()=>{const g=document.getElementById('dgallery');
+  for(let n=1;n<=24;n++){const b=document.createElement('button');b.hidden=true;b.dataset.cap='Design by Meshan Nawod';
+    const i=new Image();i.alt=`Design work ${n} by Meshan Nawod`;i.src=`assets/img/design/design-${n}.jpg`;
+    i.onload=()=>b.hidden=false;i.onerror=()=>b.remove();b.onclick=()=>openLb(b);b.append(i);g.append(b)}})();
 lb.onclick=e=>{if(e.target===lb||e.target.tagName==='BUTTON')lb.close()};
 
 // highlights (curated)
