@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meshan Nawod · Physics, Code & Community</title>
+<meta name="description" content="Meshan Nawod (M.D.M.N. Appuhami): Physics undergraduate at the University of Peradeniya, web developer trainee at the Faculty of Science Web Committee, builder of IoT, automation and web projects.">
+<meta property="og:title" content="Meshan Nawod · Portfolio">
+<meta property="og:description" content="Physics undergraduate, web developer and science communicator from the University of Peradeniya.">
+<meta property="og:image" content="assets/img/team.jpg">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/37409178?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070d;--bg2:#0e0e18;--card:#12121e;--line:#25253a;
+  --fg:#eeedf7;--muted:#a3a2bb;--accent:#7c5cff;--accent2:#22d3a6;--warm:#ffb347;
+  --radius:16px;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bg:#f7f7fb;--bg2:#ffffff;--card:#ffffff;--line:#e2e1ee;--fg:#16151f;--muted:#5d5c72;--accent:#5b3df5;--accent2:#0a9c78;--warm:#c26a00}
+}
+:root[data-theme="light"]{--bg:#f7f7fb;--bg2:#ffffff;--card:#ffffff;--line:#e2e1ee;--fg:#16151f;--muted:#5d5c72;--accent:#5b3df5;--accent2:#0a9c78;--warm:#c26a00}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 "Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:6px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-weight:700;text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{text-decoration:none;color:var(--muted);font-size:.95rem}
+.navlinks a:hover{color:var(--fg)}
+.theme{background:none;border:1px solid var(--line);color:var(--fg);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:1rem}
+@media (max-width:820px){.navlinks a:not(.keep){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 56px}
+#field{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--accent2);border:1px solid var(--line);padding:4px 12px;border-radius:999px;background:var(--bg2)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2)}
+h1{font-size:clamp(2.6rem,7vw,4.8rem);line-height:1.02;letter-spacing:-.035em;margin:18px 0 14px}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.typed{font-size:1.15rem;color:var(--muted);min-height:1.8em;margin:0 0 18px}
+.typed b{color:var(--fg);font-weight:500}
+.typed .caret{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:56ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:500;background:var(--bg2);transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px color-mix(in srgb,var(--accent) 60%,transparent)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:48% 30%}
+.portrait figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:color-mix(in srgb,#000 65%,transparent);color:#fff;font-size:.82rem;padding:8px 12px;border-radius:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.stat b{display:block;font-size:1.6rem;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.85rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.portrait{max-width:380px}.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:80px 0 0}
+.kicker{font-family:"JetBrains Mono",monospace;color:var(--accent2);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.025em;margin:6px 0 28px;line-height:1.1}
+.sub{color:var(--muted);max-width:62ch;margin:-14px 0 30px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:32px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.92rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.panel h3{margin:0 0 12px;font-size:1.05rem}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* timeline */
+.timeline{position:relative;display:grid;gap:16px}
+.role{display:grid;grid-template-columns:150px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;transition:border-color .2s,transform .2s}
+.role:hover{border-color:var(--accent);transform:translateX(4px)}
+.when{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--muted)}
+.role h3{margin:0;font-size:1.12rem}
+.org{color:var(--accent2);font-size:.95rem;margin:2px 0 8px}
+.role p{margin:0;color:var(--muted);font-size:.97rem}
+.tag{display:inline-block;font-size:.75rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);margin-right:6px;color:var(--warm)}
+@media (max-width:640px){.role{grid-template-columns:1fr;gap:6px}}
+
+/* featured */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.feature ul{padding-left:18px;margin:12px 0;color:var(--muted)}
+.feature li{margin:4px 0}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:110px;gap:10px}
+.gallery button{padding:0;border:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:var(--line)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery button:hover img{transform:scale(1.06)}
+.g1{grid-column:span 6;grid-row:span 3}.g2,.g3{grid-column:span 3;grid-row:span 2}.g4,.g5,.g6{grid-column:span 2;grid-row:span 1}
+@media (max-width:860px){.feature{grid-template-columns:1fr}}
+.repo-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 20px 40px -24px var(--accent)}
+.card h3{margin:0;font-size:1.08rem;display:flex;justify-content:space-between;gap:10px}
+.card h3 small{font-weight:400;color:var(--muted);font-size:.8rem;white-space:nowrap}
+.card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem}
+.meta span{border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.lang{display:inline-flex;align-items:center;gap:6px}
+.lang i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin:-10px 0 22px}
+.filter button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:.9rem}
+.filter button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* community */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.cgrid .panel p{margin:0;color:var(--muted);font-size:.95rem}
+.cgrid .panel .org{margin:0 0 8px}
+
+/* contact */
+.contact{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 22%,var(--card)),var(--card));border:1px solid var(--line);border-radius:24px;padding:40px;text-align:center}
+.mail{font-size:clamp(1.2rem,3.5vw,2rem);font-weight:700;word-break:break-all;text-decoration:none}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+footer{color:var(--muted);font-size:.88rem;padding:48px 0 40px;text-align:center}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1200px,94vw)}
+dialog::backdrop{background:rgba(0,0,0,.85)}
+dialog img{max-height:86vh;border-radius:12px}
+dialog p{color:#fff;text-align:center;margin:10px 0 0;font-size:.9rem}
+dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;border:0;border-radius:999px;width:40px;height:40px;font-size:1.2rem;cursor:pointer}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">meshan<span>.</span>nawod</a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#featured">Featured</a>
+      <a href="#projects">Projects</a>
+      <a href="#web">Websites</a>
+      <a href="#community">Community</a>
+      <a class="keep" href="#contact">Contact</a>
+      <button class="theme" id="themeBtn" aria-label="Toggle light or dark theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Faculty of Science · University of Peradeniya</span>
+      <h1>Hi, I'm <span class="grad">Meshan&nbsp;Nawod</span></h1>
+      <p class="typed" aria-live="polite"><b id="typed"></b><span class="caret"></span></p>
+      <p class="lead">I'm a physics undergraduate who likes to build things. I make IoT attendance systems, Slurm clusters and websites for faculty groups, and I explain research to the public. I'm a <strong>Web Developer (Trainee)</strong> at the Faculty of Science Web Committee and <strong>Junior Treasurer</strong> of Vibhava 2026.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my work →</a>
+        <a class="btn" href="https://github.com/MeshanNawod" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/meshannawod" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <figure class="portrait reveal" style="margin:0">
+      <img src="assets/img/team.jpg" alt="Meshan Nawod (centre, cream shirt) with his team at Pera Nexus 2026">
+      <figcaption>Team Sentinel Swarm at Pera Nexus 2026 · Photo: UniLife Diaries</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b id="repoCount">20+</b><span>public repositories</span></div>
+      <div class="stat"><b>4</b><span>websites built for university groups</span></div>
+      <div class="stat"><b>7</b><span>attendance methods in Sentinel Swarm</span></div>
+      <div class="stat"><b>2026</b><span>Pera Nexus exhibitor</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about" class="wrap reveal">
+  <div class="kicker">01 · About</div>
+  <h2>Physics student. Builder. Communicator.</h2>
+  <div class="about">
+    <div>
+      <p>I'm <strong>M.D.M.N. Appuhami</strong>, known as <strong>Meshan Nawod</strong>. I study Physics at the Faculty of Science, University of Peradeniya, Sri Lanka. I'm interested in physics, mathematics, computational science and AI, and I learn best by building working projects.</p>
+      <p>My work ranges from ESP32 and Raspberry Pi hardware and PHP/MySQL dashboards to Bash scripts that set up an HPC cluster, Python computer-vision tools, and websites for university departments and research centres. Outside the lab I help run student organisations and community service projects.</p>
+    </div>
+    <div class="panel">
+      <h3>Tools I use</h3>
+      <ul class="chips">
+        <li>Python</li><li>PHP · MySQL</li><li>JavaScript</li><li>HTML · CSS</li><li>C/C++ (ESP32)</li><li>Bash · Linux</li><li>Slurm · HPC</li><li>OpenCV · NumPy</li><li>Raspberry Pi</li><li>Google Sites</li><li>PySide6 · Qt</li><li>Graphic design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="wrap reveal">
+  <div class="kicker">02 · Experience</div>
+  <h2>Roles and recognition</h2>
+  <div class="timeline">
+    <article class="role">
+      <div class="when">Jun 2026 – present</div>
+      <div>
+        <h3>Web Developer (Trainee)</h3>
+        <div class="org">Web Committee, Faculty of Science · University of Peradeniya</div>
+        <p>A 10-month traineeship under the Working Student Assistantship Programme (MMF, Phase IV), offered by the Career Guidance Unit. The Chair of the Web Committee recommended me, and the Faculty Board of Science approved the appointment. My work covers the faculty's official Facebook page, website development and graphic design, plus support for faculty committees and events such as Industry Day, SURS and RESCON.</p>
+        <p style="margin-top:8px"><span class="tag">Web development</span><span class="tag">Graphic design</span><span class="tag">Social media</span></p>
+      </div>
+    </article>
+    <article class="role">
+      <div class="when">2026</div>
+      <div>
+        <h3>Junior Treasurer</h3>
+        <div class="org"><a href="https://vibhava.lk/" target="_blank" rel="noopener">Vibhava 2026</a></div>
+        <p>I help manage the budget and finances for Vibhava, a student-led programme at the University of Peradeniya.</p>
+      </div>
+    </article>
+    <article class="role">
+      <div class="when">22 Sep 2026</div>
+      <div>
+        <h3>Science Communicator · Certificate of Appreciation</h3>
+        <div class="org">Research Café, International Week 2026 · Faculty of Science</div>
+        <p>I presented research to a general audience. The Dean of the Faculty of Science gave me a certificate recognising my creativity, dedication and thoughtful preparation.</p>
+      </div>
+    </article>
+    <article class="role">
+      <div class="when">17 Jun 2026</div>
+      <div>
+        <h3>Exhibitor · Pera Nexus 2026</h3>
+        <div class="org">Department of Computer Science &amp; Statistics</div>
+        <p>My team presented Sentinel Swarm, our multi-modal smart attendance system, with live hardware demos for academics and visitors.</p>
+      </div>
+    </article>
+    <article class="role">
+      <div class="when">2025</div>
+      <div>
+        <h3>Batch Coordinator, Science Batch 22</h3>
+        <div class="org"><a href="https://vibhava.lk/" target="_blank" rel="noopener">Vibhava 2025</a></div>
+        <p>I coordinated the Faculty of Science 2022 batch's participation and communication for Vibhava.</p>
+      </div>
+    </article>
+    <article class="role">
+      <div class="when">Ongoing</div>
+      <div>
+        <h3>Content Writer · PhyBits</h3>
+        <div class="org"><a href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">The Physical Society, University of Peradeniya</a></div>
+        <p>I write short, accessible summaries of new physics research from journals such as PRL, Nature and Science, with links to the original papers.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="featured" class="wrap reveal">
+  <div class="kicker">03 · Featured project</div>
+  <h2>Sentinel Swarm: smart attendance for a whole campus</h2>
+  <div class="feature">
+    <div>
+      <p>Sentinel Swarm is a full-stack attendance and access-management system built for the University of Peradeniya. ESP32 and Raspberry Pi nodes collect attendance on their own and send it to a PHP/MySQL dashboard for admins, lecturers and students. We showed it at <strong>Pera Nexus 2026</strong>.</p>
+      <ul>
+        <li><strong>7 ways to mark attendance:</strong> fingerprint (FM10A), RFID, face recognition in the browser and on the Pi, voice, a QR code that changes every 5 seconds, and manual entry</li>
+        <li><strong>Custom hardware:</strong> keypad, 16×4 LCD, SD-card offline queue, an 18650 battery with a TP4056 charger and XL6009 boost converter, and MOSFET power gating</li>
+        <li><strong>Mesh and updates:</strong> ESP-NOW offline mesh and firmware updates pushed from the dashboard (OTA)</li>
+        <li><strong>Dashboard:</strong> live logs, a mirror of the device's LCD, a virtual keypad, analytics, and email alerts when a student falls below 80% attendance</li>
+      </ul>
+      <div class="repo-links">
+        <a class="btn" href="https://github.com/MeshanNawod/csc2052-coursework-archive" target="_blank" rel="noopener">Full archive</a>
+        <a class="btn" href="https://github.com/MeshanNawod/csc2052-coursework" target="_blank" rel="noopener">CSC2052 coursework (V3)</a>
+        <a class="btn" href="https://github.com/MeshanNawod/smart-attendance-management-system" target="_blank" rel="noopener">Smart attendance system</a>
+        <a class="btn" href="https://meshannawod.github.io/csc2052-coursework/" target="_blank" rel="noopener">Live page ↗</a>
+      </div>
+    </div>
+    <div class="gallery" id="gallery">
+      <button class="g1" data-cap="Live demo of the ESP32 attendance node for faculty members"><img src="assets/img/demo-laptop.jpg" alt="Meshan demonstrating the attendance dashboard on a laptop next to the ESP32 node" loading="lazy"></button>
+      <button class="g2" data-cap="Walking a visitor through fingerprint enrolment"><img src="assets/img/demo-keypad.jpg" alt="Meshan pressing the keypad on the red attendance device while visitors watch" loading="lazy"></button>
+      <button class="g3" data-cap="Explaining the system architecture"><img src="assets/img/explaining.jpg" alt="Team members explaining the project to a lecturer" loading="lazy"></button>
+      <button class="g4" data-cap="Our booth at Pera Nexus 2026"><img src="assets/img/booth.jpg" alt="Team at the booth with the attendance device and circuit boards" loading="lazy"></button>
+      <button class="g5" data-cap="The exhibition hall, Department of Computer Science & Statistics"><img src="assets/img/hall.jpg" alt="Crowded exhibition hall with student projects" loading="lazy"></button>
+      <button class="g6" data-cap="Team Sentinel Swarm · Photo: UniLife Diaries"><img src="assets/img/team.jpg" alt="The five-member team posing at the Pera Nexus entrance" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="wrap reveal">
+  <div class="kicker">04 · Projects</div>
+  <h2>Selected work on GitHub</h2>
+  <p class="sub">A few highlights first, then every public repository, loaded live from GitHub.</p>
+  <div class="grid" id="highlights"></div>
+  <h3 style="margin:44px 0 16px">All repositories</h3>
+  <div class="filter" id="filter" role="group" aria-label="Filter by language"></div>
+  <div class="grid" id="repos"><p class="mono" style="color:var(--muted)">Loading repositories…</p></div>
+</section>
+
+<section id="web" class="wrap reveal">
+  <div class="kicker">05 · Websites</div>
+  <h2>Sites I've built for the university</h2>
+  <div class="grid">
+    <a class="card" href="https://sites.google.com/view/paaup/" target="_blank" rel="noopener">
+      <h3>PAA.UP <small>↗</small></h3>
+      <p>The official site of the Physics Alumni Association of the University of Peradeniya, with its committee, news, events, workshops, donations, partners and an alumni directory.</p>
+      <div class="meta"><span>Google Sites</span><span>Custom embeds</span></div>
+    </a>
+    <a class="card" href="https://sites.google.com/view/solarenergyresearchcentre/home" target="_blank" rel="noopener">
+      <h3>Solar Energy Research Centre <small>↗</small></h3>
+      <p>SERC is the University of Peradeniya's solar energy research centre. The site covers its vision, objectives, news, board of management and advisory panel.</p>
+      <div class="meta"><span>Google Sites</span><span>Research</span></div>
+    </a>
+    <a class="card" href="https://sites.google.com/view/physics-of-rovs/home" target="_blank" rel="noopener">
+      <h3>Physics of ROVs <small>↗</small></h3>
+      <p>An educational site on the physics inside VideoRay underwater robots: buoyancy, thrust, underwater optics, PID control, sonar and acoustic navigation.</p>
+      <div class="meta"><span>Google Sites</span><span>Science communication</span></div>
+    </a>
+    <a class="card" href="https://upps.soc.pdn.ac.lk/articles/phybits" target="_blank" rel="noopener">
+      <h3>PhyBits <small>↗</small></h3>
+      <p>Bite-sized physics news for The Physical Society, University of Peradeniya, to which I contribute as a content writer.</p>
+      <div class="meta"><span>Writing</span><span>Physics news</span></div>
+    </a>
+  </div>
+</section>
+
+<section id="community" class="wrap reveal">
+  <div class="kicker">06 · Community</div>
+  <h2>Beyond the code</h2>
+  <div class="cgrid">
+    <div class="panel"><h3>Vibhava</h3><p class="org">Junior Treasurer 2026 · Batch Coordinator 2025</p><p>I help organise one of the university's student-led programmes, from coordinating the Science 22 batch to managing finances.</p></div>
+    <div class="panel"><h3>Rotaract · Equinox '25</h3><p class="org">Project volunteer</p><p>I volunteered on Equinox '25 and other Rotaract service projects.</p></div>
+    <div class="panel"><h3>Leo Club</h3><p class="org">Project volunteer</p><p>I've worked on several Leo community service projects.</p></div>
+    <div class="panel"><h3>Abhina</h3><p class="org">Project volunteer</p><p>I've contributed to several Abhina projects.</p></div>
+    <div class="panel"><h3>PAA.UP &amp; Physics Dept.</h3><p class="org">Web &amp; design support</p><p>I build web pages, embed codes and design assets for the Physics Alumni Association and the department.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap reveal">
+  <div class="contact">
+    <div class="kicker">07 · Contact</div>
+    <h2 style="margin-bottom:12px">Let's build something.</h2>
+    <p style="color:var(--muted);margin:0 0 18px">Open to collaborations, internships, research projects and web work.</p>
+    <a class="mail" href="mailto:meshannawodme@gmail.com">meshannawodme@gmail.com</a>
+    <div class="socials">
+      <a class="btn" href="https://github.com/MeshanNawod" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/meshannawod" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.facebook.com/meshan.me" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" href="https://www.instagram.com/meshan_nawod/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://x.com/Meshan_Nawod" target="_blank" rel="noopener">X</a>
+      <a class="btn" href="https://www.thecn.com/MA3204" target="_blank" rel="noopener">CourseNetworking</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr">2026</span> Meshan Nawod · Built by hand and hosted on GitHub Pages</footer>
+
+<dialog id="lightbox"><button aria-label="Close">✕</button><img alt=""><p></p></dialog>
+
+<script>
+// theme
+const root=document.documentElement,btn=document.getElementById('themeBtn');
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+btn.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// typed roles
+const roles=['Physics undergraduate','Web Developer (Trainee)','IoT & automation builder','Science communicator','Junior Treasurer · Vibhava 2026'];
+const el=document.getElementById('typed');let ri=0,ci=0,del=false;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function tick(){const w=roles[ri];if(reduce){el.textContent=roles.join(' · ');return}
+  el.textContent=w.slice(0,ci);
+  if(!del&&ci<w.length){ci++;setTimeout(tick,60)}else if(!del){del=true;setTimeout(tick,1600)}
+  else if(ci>0){ci--;setTimeout(tick,30)}else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300)}}
+tick();
+
+// particle field
+(()=>{const c=document.getElementById('field');if(reduce)return;const x=c.getContext('2d');let P=[],W,H;
+function size(){W=c.width=c.offsetWidth*devicePixelRatio;H=c.height=c.offsetHeight*devicePixelRatio;P=Array.from({length:Math.min(70,Math.floor(W/25))},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+size();addEventListener('resize',size);
+function f(){x.clearRect(0,0,W,H);const col=getComputedStyle(root).getPropertyValue('--accent').trim();
+  for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+  x.strokeStyle=col;x.fillStyle=col;
+  for(let i=0;i<P.length;i++){x.globalAlpha=.8;x.beginPath();x.arc(P[i].x,P[i].y,1.6*devicePixelRatio,0,7);x.fill();
+    for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y),m=140*devicePixelRatio;if(d<m){x.globalAlpha=(1-d/m)*.35;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}}
+  requestAnimationFrame(f)}f()})();
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+// lightbox
+const lb=document.getElementById('lightbox');
+document.querySelectorAll('#gallery button').forEach(b=>b.onclick=()=>{const i=b.querySelector('img');lb.querySelector('img').src=i.src;lb.querySelector('img').alt=i.alt;lb.querySelector('p').textContent=b.dataset.cap;lb.showModal()});
+lb.onclick=e=>{if(e.target===lb||e.target.tagName==='BUTTON')lb.close()};
+
+// highlights (curated)
+const H=[
+ ['DesktopWaifu','An animated desktop companion for Windows. She walks along the taskbar and has a Gemini-powered chat, voice, memory and webcam awareness, with hair physics and 64 expressions.',['Python','PySide6','OpenGL','Gemini']],
+ ['slurm-cluster-automation','Bash scripts that turn fresh Ubuntu PCs into a Physics-lab Slurm HPC cluster, with Munge, NFS, passwordless SSH and clear error hints.',['Bash','Slurm','HPC','Linux']],
+ ['photo-mosaic-generator','Rebuilds photos, videos or a live webcam feed from thousands of tiles. It matches tiles in LAB colour space with the Hungarian algorithm and outputs up to 8K.',['Python','OpenCV','SciPy']],
+ ['Image-to-CMD','Turns images, videos and webcam feeds into coloured text art for Command Prompt, with themes, edge mode, and PNG/MP4/GIF export.',['Python','Pillow','OpenCV']],
+ ['osi-tcp-ip-network-simulator','An interactive simulator that shows how data moves through the OSI and TCP/IP layers.',['HTML','JavaScript','Networking']],
+ ['quantum-mechanics-learning-resources','Notebooks and scripts on the Schrödinger equation, operator algebra, wave-packet dynamics and perturbation theory.',['Python','NumPy','SymPy']]
+];
+document.getElementById('highlights').innerHTML=H.map(([n,d,t])=>`<a class="card" href="https://github.com/MeshanNawod/${n}" target="_blank" rel="noopener"><h3>${n.replace(/-/g,' ')} <small>↗</small></h3><p>${d}</p><div class="meta">${t.map(s=>`<span>${s}</span>`).join('')}</div></a>`).join('');
+
+// live repos
+const colors={Python:'#3572A5',HTML:'#e34c26',PHP:'#4F5D95',Shell:'#89e051',JavaScript:'#f1e05a',Makefile:'#427819',CSS:'#563d7c'};
+const hide=['Test','will-you-be-my-valentine','romantic-invitation-website','interactive-proposal-website','interactive-proposal-website-v2','birthday-greeting-website'];
+let all=[];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function render(lang){const list=all.filter(r=>lang==='All'||r.language===lang);
+  document.getElementById('repos').innerHTML=list.map(r=>`<a class="card" href="${r.html_url}" target="_blank" rel="noopener"><h3>${esc(r.name)} <small>${r.fork?'fork':new Date(r.pushed_at).getFullYear()}</small></h3><p>${esc(r.description||'No description yet. Open the repo to see more.')}</p><div class="meta">${r.language?`<span class="lang"><i style="background:${colors[r.language]||'#888'}"></i>${r.language}</span>`:''}${r.has_pages?'<span>Live site</span>':''}${r.stargazers_count?`<span>★ ${r.stargazers_count}</span>`:''}</div></a>`).join('')}
+fetch('https://api.github.com/users/MeshanNawod/repos?per_page=100&sort=pushed').then(r=>r.json()).then(d=>{
+  if(!Array.isArray(d))throw 0;
+  all=d.filter(r=>!hide.includes(r.name));
+  document.getElementById('repoCount').textContent=d.length;
+  const langs=['All',...new Set(all.map(r=>r.language).filter(Boolean))];
+  const fl=document.getElementById('filter');
+  fl.innerHTML=langs.map(l=>`<button aria-pressed="${l==='All'}">${l}</button>`).join('');
+  fl.querySelectorAll('button').forEach(b=>b.onclick=()=>{fl.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render(b.textContent)});
+  render('All');
+}).catch(()=>{document.getElementById('repos').innerHTML='<p>Couldn\'t load repositories right now. <a href="https://github.com/MeshanNawod?tab=repositories">Browse them on GitHub →</a></p>'});
+</script>
+</body>
+</html>
