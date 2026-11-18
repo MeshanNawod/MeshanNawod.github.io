@@ -282,10 +282,9 @@ dialog button{position:fixed;top:16px;right:16px;background:#fff;color:#000;bord
         <li><strong>Dashboard:</strong> live logs, a mirror of the device's LCD, a virtual keypad, analytics, and email alerts when a student falls below 80% attendance</li>
       </ul>
       <div class="repo-links">
-        <a class="btn" href="https://github.com/MeshanNawod/csc2052-coursework-archive" target="_blank" rel="noopener">Full archive</a>
-        <a class="btn" href="https://github.com/MeshanNawod/csc2052-coursework" target="_blank" rel="noopener">CSC2052 coursework (V3)</a>
-        <a class="btn" href="https://github.com/MeshanNawod/smart-attendance-management-system" target="_blank" rel="noopener">Smart attendance system</a>
-        <a class="btn" href="https://meshannawod.github.io/csc2052-coursework/" target="_blank" rel="noopener">Live page ↗</a>
+        <a class="btn" href="https://github.com/MeshanNawod/smart-attendance-management-system_v_3" target="_blank" rel="noopener">Sentinel Swarm (v3, full system)</a>
+        <a class="btn" href="https://github.com/MeshanNawod/smart-attendance-management-system_v_2" target="_blank" rel="noopener">Version 2</a>
+        <a class="btn" href="https://github.com/MeshanNawod/smart-attendance-management-system_v_1" target="_blank" rel="noopener">Version 1</a>
       </div>
     </div>
     <div class="gallery" id="gallery">
@@ -448,14 +447,14 @@ lb.onclick=e=>{if(e.target===lb||e.target.tagName==='BUTTON')lb.close()};
 
 // highlights (curated)
 const H=[
- ['DesktopWaifu','An animated desktop companion for Windows. She walks along the taskbar and has a Gemini-powered chat, voice, memory and webcam awareness, with hair physics and 64 expressions.',['Python','PySide6','OpenGL','Gemini']],
+ ['desktop-waifu','An animated desktop companion for Windows. She walks along the taskbar and has a Gemini-powered chat, voice, memory and webcam awareness, with hair physics and 64 expressions.',['Python','PySide6','OpenGL','Gemini'],'https://meshannawod.github.io/desktop-waifu/'],
  ['slurm-cluster-automation','Bash scripts that turn fresh Ubuntu PCs into a Physics-lab Slurm HPC cluster, with Munge, NFS, passwordless SSH and clear error hints.',['Bash','Slurm','HPC','Linux']],
  ['photo-mosaic-generator','Rebuilds photos, videos or a live webcam feed from thousands of tiles. It matches tiles in LAB colour space with the Hungarian algorithm and outputs up to 8K.',['Python','OpenCV','SciPy']],
- ['Image-to-CMD','Turns images, videos and webcam feeds into coloured text art for Command Prompt, with themes, edge mode, and PNG/MP4/GIF export.',['Python','Pillow','OpenCV']],
- ['osi-tcp-ip-network-simulator','An interactive simulator that shows how data moves through the OSI and TCP/IP layers.',['HTML','JavaScript','Networking']],
- ['quantum-mechanics-learning-resources','Notebooks and scripts on the Schrödinger equation, operator algebra, wave-packet dynamics and perturbation theory.',['Python','NumPy','SymPy']]
+ ['Image-to-CMD','Turns images, videos and webcam feeds into coloured text art for Command Prompt, with themes, edge mode and PNG/MP4/GIF export. Also runs in the browser.',['Python','OpenCV','JavaScript'],'https://meshannawod.github.io/Image-to-CMD/'],
+ ['osi-tcp-ip-network-simulator','An interactive simulator that shows how data moves through the OSI and TCP/IP layers.',['HTML','JavaScript','Networking'],'https://meshannawod.github.io/osi-tcp-ip-network-simulator/'],
+ ['quantum-mechanics-learning-resources','Quantum Wave Lab: an interactive superposition and Fourier-series lab with probability density, quantum properties and orthogonality checks.',['HTML','JavaScript','Chart.js'],'https://meshannawod.github.io/quantum-mechanics-learning-resources/']
 ];
-document.getElementById('highlights').innerHTML=H.map(([n,d,t])=>`<a class="card" href="https://github.com/MeshanNawod/${n}" target="_blank" rel="noopener"><h3>${n.replace(/-/g,' ')} <small>↗</small></h3><p>${d}</p><div class="meta">${t.map(s=>`<span>${s}</span>`).join('')}</div></a>`).join('');
+document.getElementById('highlights').innerHTML=H.map(([n,d,t,demo])=>`<div class="card"><h3><a href="https://github.com/MeshanNawod/${n}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${n.replace(/-/g,' ')}</a> <small><a href="https://github.com/MeshanNawod/${n}" target="_blank" rel="noopener" style="color:inherit">code ↗</a>${demo?` · <a href="${demo}" target="_blank" rel="noopener" style="color:var(--accent,inherit)">live demo ↗</a>`:''}</small></h3><p>${d}</p><div class="meta">${t.map(s=>`<span>${s}</span>`).join('')}</div></div>`).join('');
 
 // live repos
 const colors={Python:'#3572A5',HTML:'#e34c26',PHP:'#4F5D95',Shell:'#89e051',JavaScript:'#f1e05a',Makefile:'#427819',CSS:'#563d7c'};
